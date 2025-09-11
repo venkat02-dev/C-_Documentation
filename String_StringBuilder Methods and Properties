@@ -1,0 +1,138 @@
+String Methods and Properties:
+1. Length
+2. Substring()
+3. IndexOf()
+4. LastIndexOf()
+5. ToLower()
+6. ToUpper()
+7. Trim()
+8. Replace()
+9. Split()
+10. StartsWith()
+11. EndsWith()
+12. Contains()
+13. Insert()
+14. Remove()
+15. Format()
+16. Join()
+17. Compare()
+18. IsNullOrEmpty()
+19. IsNullOrWhiteSpace()
+20. PadLeft()
+21. PadRight()
+
+StringBuilder Methods and Properties:
+1. Length
+2. Capacity
+3. Append()
+4. Insert()
+5. Remove()
+6. Replace()
+7. Clear()
+8. ToString()
+9. AppendLine()
+10. CopyTo()
+11. EnsureCapacity()
+
+
+
+String Methods and Properties with Examples
+1. Length
+    * Definition: Returns the length of the string.
+    * Example: string str = "Hello"; int length = str.Length; // 5
+2. Substring()
+    * Definition: Extracts a substring from a string starting from a specified index and for a specified length.
+    * Example: string str = "Hello, World"; string sub = str.Substring(7, 5); // "World"
+3. IndexOf()
+    * Definition: Finds the index of the first occurrence of a substring.
+    * Example: string str = "Hello, World"; int index = str.IndexOf("World"); // 7
+4. LastIndexOf()
+    * Definition: Finds the index of the last occurrence of a substring.
+    * Example: string str = "Hello, World, World"; int lastIndex = str.LastIndexOf("World"); // 14
+5. ToLower()
+    * Definition: Converts all characters in the string to lowercase.
+    * Example: string str = "HELLO"; string lower = str.ToLower(); // "hello"
+6. ToUpper()
+    * Definition: Converts all characters in the string to uppercase.
+    * Example: string str = "hello"; string upper = str.ToUpper(); // "HELLO"
+7. Trim()
+    * Definition: Removes leading and trailing whitespace characters from the string.
+    * Example: string str = " Hello "; string trimmed = str.Trim(); // "Hello"
+8. Replace()
+    * Definition: Replaces all occurrences of a specified substring with another substring.
+    * Example: string str = "Hello, World"; string replaced = str.Replace("World", "C#"); // "Hello, C#"
+9. Split()
+    * Definition: Splits the string into an array of substrings based on a delimiter.
+    * Example: string str = "apple,banana,orange"; string[] fruits = str.Split(','); // ["apple", "banana", "orange"]
+10. StartsWith()
+    * Definition: Checks if the string starts with a specific substring.
+    * Example: string str = "Hello"; bool startsWith = str.StartsWith("He"); // true
+11. EndsWith()
+    * Definition: Checks if the string ends with a specific substring.
+    * Example: string str = "Hello"; bool endsWith = str.EndsWith("lo"); // true
+12. Contains()
+    * Definition: Checks if the string contains a specific substring.
+    * Example: string str = "Hello, World"; bool contains = str.Contains("World"); // true
+13. Insert()
+    * Definition: Inserts a substring at a specified index position.
+    * Example: string str = "Hello World"; string inserted = str.Insert(5, ", Beautiful"); // "Hello, Beautiful World"
+14. Remove()
+    * Definition: Removes a specified number of characters starting from a specified index.
+    * Example: string str = "Hello, World"; string removed = str.Remove(5, 7); // "Hello"
+15. Format()
+    * Definition: Formats strings by replacing placeholders with values.
+    * Example: string format = string.Format("Hello, {0}!", "World"); // "Hello, World!"
+16. Join()
+    * Definition: Joins an array of strings into a single string with a separator.
+    * Example: string[] words = { "apple", "banana", "cherry" }; string joined = string.Join(",", words); // "apple,banana,cherry"
+17. Compare()
+    * Definition: Compares two strings lexicographically.
+    * Example: string str1 = "apple"; string str2 = "banana"; int result = string.Compare(str1, str2); // Negative number (apple < banana)
+18. IsNullOrEmpty()
+    * Definition: Checks if the string is null or has no characters.
+    * Example: string str = ""; bool isEmpty = string.IsNullOrEmpty(str); // true
+19. IsNullOrWhiteSpace()
+    * Definition: Checks if the string is null, empty, or consists only of whitespace.
+    * Example: string str = " "; bool isWhiteSpace = string.IsNullOrWhiteSpace(str); // true
+20. PadLeft()
+    * Definition: Pads the string on the left with a specified character to make it a certain length.
+    * Example: string str = "42"; string padded = str.PadLeft(5, '0'); // "00042"
+21. PadRight()
+    * Definition: Pads the string on the right with a specified character to make it a certain length.
+    * Example: string str = "42"; string padded = str.PadRight(5, '0'); // "42000"
+
+
+StringBuilder Methods and Properties with Examples
+1. Length
+    * Definition: Gets or sets the length of the StringBuilder.
+    * Example: StringBuilder sb = new StringBuilder("Hello"); int length = sb.Length; // 5
+2. Capacity
+    * Definition: Gets or sets the number of characters that can be stored in the current capacity of the StringBuilder.
+    * Example: StringBuilder sb = new StringBuilder("Hello"); int capacity = sb.Capacity; // 16 (initial default capacity)
+3. Append()
+    * Definition: Appends the specified string to the end of the StringBuilder.
+    * Example: StringBuilder sb = new StringBuilder("Hello"); sb.Append(" World"); Console.WriteLine(sb.ToString()); // "Hello World"
+4. Insert()
+    * Definition: Inserts the specified string at the given index position.
+    * Example: StringBuilder sb = new StringBuilder("Hello World"); sb.Insert(5, ", Beautiful"); Console.WriteLine(sb.ToString()); // "Hello, Beautiful World"
+5. Remove()
+    * Definition: Removes a specified number of characters starting at the given index position.
+    * Example: StringBuilder sb = new StringBuilder("Hello, Beautiful World"); sb.Remove(5, 12); Console.WriteLine(sb.ToString()); // "Hello World"
+6. Replace()
+    * Definition: Replaces all occurrences of a specified substring with another substring.
+    * Example: StringBuilder sb = new StringBuilder("Hello World, Hello!"); sb.Replace("Hello", "Hi"); Console.WriteLine(sb.ToString()); // "Hi World, Hi!"
+7. Clear()
+    * Definition: Clears the contents of the StringBuilder.
+    * Example: StringBuilder sb = new StringBuilder("Hello World"); sb.Clear(); Console.WriteLine(sb.ToString()); // "" (empty string)
+8. ToString()
+    * Definition: Converts the StringBuilder to a regular string.
+    * Example: StringBuilder sb = new StringBuilder("Hello World"); string str = sb.ToString(); Console.WriteLine(str); // "Hello World"
+9. AppendLine()
+    * Definition: Appends a string followed by a newline to the end of the StringBuilder.
+    * Example: StringBuilder sb = new StringBuilder("Hello"); sb.AppendLine(" World"); sb.AppendLine("Goodbye!"); Console.WriteLine(sb.ToString()); // "Hello World\nGoodbye!"
+10. CopyTo()
+    * Definition: Copies a specified range of characters from the StringBuilder to a character array.
+    * Example: StringBuilder sb = new StringBuilder("Hello World"); char[] arr = new char[5]; sb.CopyTo(0, arr, 0, 5); Console.WriteLine(new string(arr)); // "Hello"
+11. EnsureCapacity()
+    * Definition: Ensures that the StringBuilder can store at least the specified number of characters without reallocating.
+    * Example: StringBuilder sb = new StringBuilder(); sb.EnsureCapacity(100); Console.WriteLine(sb.Capacity); // 100
