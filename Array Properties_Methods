@@ -1,0 +1,78 @@
+Array Properties:
+* Length: Total elements in array. array.Length
+* Rank: Number of dimensions. array.Rank
+* GetLength(dimension): Size of specific dimension. array.GetLength(0)
+* GetUpperBound(dimension): Upper index of dimension. array.GetUpperBound(0)
+* GetLowerBound(dimension): Lower index of dimension. array.GetLowerBound(0)
+* Clone(): Shallow copy of array. array.Clone()
+
+Array Methods:
+* Copy():
+    * Copy a range of elements to another array. Array.Copy(src, dest, length)
+    * Copy part of an array (sourceIndex, destIndex, length). Array.Copy(src, srcIndex, dest, destIndex, length)
+* CopyTo():
+    * Copy all elements to another array. array.CopyTo(dest, index)
+    * Copy a portion to another array. array.CopyTo(dest, destIndex, length)
+* GetEnumerator(): Get array enumerator. array.GetEnumerator()
+* IndexOf():
+    * Find first index of value. Array.IndexOf(array, value)
+    * Find index from a specified start index. Array.IndexOf(array, value, startIndex)
+    * Find index within a specified range. Array.IndexOf(array, value, startIndex, count)
+* LastIndexOf():
+    * Find last index of value. Array.LastIndexOf(array, value)
+    * Find last index from a specified start index. Array.LastIndexOf(array, value, startIndex)
+    * Find last index within a range. Array.LastIndexOf(array, value, startIndex, count)
+* Sort(): Sort elements. Array.Sort(array)
+    * Sort with a custom comparer. Array.Sort(array, comparer)
+    * Sort a portion of the array. Array.Sort(array, index, length)
+* Reverse(): Reverse elements. Array.Reverse(array)
+    * Reverse a portion of the array. Array.Reverse(array, index, length)
+* Exists(): Check if any element matches condition. Array.Exists(array, condition)
+* Find(): Find first matching element. Array.Find(array, condition)
+* FindAll(): Find all matching elements. Array.FindAll(array, condition)
+* FindIndex(): Find index of first match. Array.FindIndex(array, condition)
+    * Find index within a specified range. Array.FindIndex(array, startIndex, count, condition)
+* FindLast(): Find last matching element. Array.FindLast(array, condition)
+* ForEach(): Perform action on each element. Array.ForEach(array, action)
+* Fill(): Fill array with a value. Array.Fill(array, value)
+* Clear(): Set range of elements to default. Array.Clear(array, start, length)
+* Resize(): Change array size. Array.Resize(ref array, newSize)
+* TrueForAll(): Check if all elements match condition. Array.TrueForAll(array, condition)
+* ConvertAll(): Convert array to another type. Array.ConvertAll(array, converter)
+* BinarySearch(): Binary search for value. Array.BinarySearch(array, value)
+    * Binary search with a custom comparer. Array.BinarySearch(array, value, comparer)
+
+Array Class Static Methods:
+* Equals(): Compare two arrays. Array.Equals(array1, array2)
+* IsArray(): Check if object is an array.  [Used with Gettype() : array.GetType().IsArray;  // Output: True
+
+
+LINQ Methods for Arrays:
+* Where(): Filter elements. array.Where(cond).ToArray() EX: int[] arr = {1, 2, 3, 4}; var even = arr.Where(x => x % 2 == 0).ToArray(); // [2, 4]
+
+* Select(): Project elements. EX: int[] arr = {1, 2, 3}; var squares = arr.Select(x => x * x).ToArray(); // [1, 4, 9]
+
+* OrderBy() / OrderByDescending(): Sort elements. EX: int[] arr = {3, 1, 2}; var ordered = arr.OrderBy(x => x).ToArray(); // [1, 2, 3]s. var orderDesc = arr.OrderByDescending(x => x).ToArray() //[3,2,1]
+
+* First() / FirstOrDefault(): Get first element. array.First(x => x > 5) EX: int[] arr = {1, 2, 3, 4}; int first = arr.First(x => x > 1); // 2; int firstOrDfault = arr.FirstOrDefault(x => x > 1); // 4;
+
+* Last() / LastOrDefault(): Get last element. array.Last(x => x < 10) array.LastOrDefault(x => x < 10) EX: int[] arr = {1, 2, 3}; int last = arr.Last(x => x < 3); // 2) int lastOrDefault = array.LastOrDefault(x => x < 10); // 3
+
+* ToList(): Convert to List. EX: int[] arr = {1, 2, 3}; var list = arr.ToList();
+
+* Distinct(): Remove duplicates. EX: int[] arr = {1, 2, 2, 3}; var distinct = arr.Distinct().ToArray(); // [1, 2, 3]
+
+* Skip(): Skip elements. EX: int[] arr = {1, 2, 3, 4}; var skip = arr.Skip(2).ToArray(); // [3, 4]
+
+* Take(): EX: int[] arr = {1, 2, 3, 4}; var take = arr.Take(2).ToArray(); // [1, 2]
+
+* Aggregate(): Apply a function across elements. EX: int[] arr = {1, 2, 3}; var sum = arr.Aggregate((acc, x) => acc + x); // 6
+
+* Any(): Check if any element matches condition. EX: int[] arr = {1, 2, 3}; bool anyGreaterThan2 = arr.Any(x => x > 2); // true
+
+* All(): Check if all elements match condition. EX: int[] arr = {1, 2, 3}; bool allGreaterThan0 = arr.All(x => x > 0); // true
+
+* Count(): Count elements. EX: int[] arr = {1, 2, 3}; int count = arr.Count(x => x > 1); // 2
+
+
+Netstat -a [To find the ports]
