@@ -1,0 +1,138 @@
+Every array 
+
+System.Object:
+
+The "System.Object" is a pre-defined class, which is the "Ultimate super class (base class)" in .net.
+All the classes and other types are inherited from System.Object directly / indirectly and are inherited from System.Object directly / indirectly..
+All C# classes, structures, interfaces, enumerations are children of System.Object class.
+Derived classes can override Equals, GetHashCode and ToString methods of Object class.
+System.Object class is meant for achieving "type safety" in C#.
+=> Methods:
+Bool Equals(object value) : Compares the current object with the given argument object
+GetHashCode(object value) :Returns the a number that represents the object.
+Type GetType() : Returns the name of the class (including namespace path)
+string ToString() : By default, it returns the name of the class (including namespace path), based on which, the object is created.
+
+Boxing
+It is a process of converting a value from "Value-Type Data Type" to "Reference-Type Data Type", if they are compatible data types.
+This can be done automatically [no need of any syntax].
+
+Unboxing
+It is a process of converting a value from "Reference-Type Data Type" to "Value-Type Data Type", if they are compatible data types.
+This should be done explicitly (by using explicit casting).
+
+
+ARRAYS:
+
+Array is a group of multiples values of same type.
+Each value of array is called “element”
+All the elements are stored in continuous memory locations  in HEAP.
+Every array is treated as an object for System.Array Class. So arrays are stored in heap, its address(first elements address) is stored in reference variable act stack.
+System.Array class provides a set of props and methods for every array.
+
+=> Properties: 
+Length
+=> Methods:
+IndexOf
+BinarySearch
+Clear
+Resize
+Sort
+Reverse
+CopyTo
+Cone
+
+Array.IndexOf():
+This method searches the array for the given value,
+If the value is found, it returns its index.
+If the values is not found, it returns -1
+Note: IndexOf method performs linear search, that means it searcheds all the elements of an array until search value is found, has good performance for small arrays. But binary search is recommended for larger arrays
+
+=> First parameter(array) is the array in which you want to search
+=> Second parameter(value) is value to be searched
+=> Third parameter(startIndex) is start index, from where the search need to started .
+
+EX1:
+ string[] myArray = new string[]{"He", "Be", "Do", "Gu", "Pul"};
+  var k = Array.IndexOf(myArray, “Do”);
+   Console.WriteLine(k); //Prints 2
+
+
+EX2: 
+string[] myArray = new string[]{"He", "Be", "Do", "Gu", "Pul”, “Be”};
+ var k = Array.IndexOf(myArray, “Be”, 3);
+ Console.WriteLine(k); //Prints 5
+Here search starts from 3rd index so “Be” at 1st index is not considered.
+
+LastIndexOf(Array, Object):
+* Returns the index of the last occurrence of a specified value in an array.  
+* If the value is not found, it returns -1.  
+* Example: int[] numbers = {1, 2, 3, 2, 4}; int index = Array.LastIndexOf(numbers, 2); // index will be 3. 
+
+Find( array, Predicate<T> match):
+    * Returns the value of the first element in the array that satisfies the condition defined by the match predicate.  
+    * If no element satisfies the condition, it returns default(T) (the default value of the array's type).  
+    * Example: int[] numbers = {1, 2, 3, 4, 5}; int firstEven = Array.Find(numbers, n => n % 2 == 0); // firstEven will be 2.  
+FindLast( array, Predicate<T> match):
+    * Returns the value of the last element in the array that satisfies the condition defined by the match predicate.  
+    * If no element satisfies the condition, it returns default(T) (the default value of the array's type).  
+    * Example: int[] numbers = {1, 2, 3, 4, 5}; int firstEven = Array.FindLast(numbers, n => n % 2 == 0); // Last Even will be 4. 
+
+FindAll(): Find all matching elements. Array.FindAll(array, condition)
+    * Example: int[] numbers = {1, 2, 3, 4, 5}; int allEven = Array.FindAll(numbers, n => n % 2 == 0); // allEven will be 2,4.  
+FindIndex( array, Predicate<T> match):
+    * Returns the index of the first element in the array that satisfies the condition defined by the match predicate.  
+    * If no element satisfies the condition, it returns -1.  
+    * Example: int[] numbers = {1, 2, 3, 4, 5}; int index = Array.FindIndex(numbers, n => n % 2 == 0); // index will be 1. 
+
+FindLastIndex( Predicate<T> match):
+    * Returns the index of the last element in the array that satisfies the condition defined by the match predicate.  
+    * If no element satisfies the condition, it returns -1.  
+    * Example: int[] numbers = {1, 2, 3, 4, 5}; int index = Array.FindLastIndex(numbers, n => n % 2 == 0); // index will be 3.
+
+Array.BinarySearch():
+This method searches the array for the given value,
+If the value is found, it returns its index.
+If the values is not found, it returns -1
+Note: Binary search required and sorted array, it doesn’t support unsorted array
+
+Array.Clear():
+Array.Clear(Array array, int index, int length)
+This method starts with given index and sets all the elements to zero.
+EX: 
+ int[] test = new int[]{20,30,35,45,69,70,70,90,100};
+ Array.Clear(test, 2, 3);
+ foreach(int i in test){
+     Console.WriteLine(i);
+ }
+Result: 20, 30, 0, 0, 0, 70, 70, 90 100
+
+
+Array.Resize():
+This method increases / decreases size of the array.
+Array.Resize<T>(ref  array, int newSize)
+=> First Param: Represents array which you want to resize.
+=> Second Pram: Represents new size of the array
+  int[] test = new int[]{20,30,35};
+Ex: Array.Resize(ref test, 6)
+
+Array.Sort():
+This method sorts the array in ascending order.
+Array.Sort(Array array)
+ex:  int[] test = new int[]{104, 68, 92, 20,30,35,};
+ Array.Sort(test);
+
+Array.Reverse():
+This method sorts the array in  descending order.
+Array.Reverse(Array array)
+EX:  int[] test = new int[]{104, 68, 92, 20,30,35};
+ Array.Reverse(test);
+
+IsArray(): [Used along with GetType]
+int[] numbers = { 1, 2, 3 };
+string text = "Hello, World!";
+        
+   Console.WriteLine(numbers.GetType().IsArray);  // Output: True
+    Console.WriteLine(text.GetType().IsArray);     // Output: False
+
+
