@@ -1,3 +1,15 @@
+📌 Question: Difference between string vs string builder?
+System.String is immutable. System.StringBuilder was designed with the purpose of having a mutable string where a variety of operations can be performed.
+✅ * String is immutable, meaning that any operation that modifies a string creates a new string object. This can lead to performance issues when performing multiple string concatenations in a loop,   Since the String class is immutable, it is costlier to create a new object every time we need to make a change. 
+		string text = "Hello";
+		text = text + "world";
+✅ * StringBuilder is mutable and is designed for scenarios where you need to modify a string repeatedly. It is much more efficient than String for string manipulations. It creates a mutable string of characters. StringBuilder will make the changes to the existing object rather than creating a new object. StringBuilder class comes into picture which can be evoked using the System.Text namespace.
+		StringBuilder text = new StringBuilder("Hello");
+		test.Append("World");
+
+📌 Question: How can you improve string concatenation performance in C#?
+✅ Use StringBuilder instead of repeated string concatenation with + to improve performance, especially when concatenating or linking multiple strings together in a loop.
+
 String Methods and Properties:
 1. Length
 2. Substring()
